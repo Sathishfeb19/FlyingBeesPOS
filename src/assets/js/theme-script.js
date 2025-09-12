@@ -7,7 +7,7 @@ document.querySelector("html").setAttribute('data-layout', localStorage.getItem(
 document.querySelector("html").setAttribute('data-width', localStorage.getItem('width') || 'fluid');
 
 let themesettings = `
-<div class="sidebar-contact ">
+<div class="sidebar-contact">
     <div class="toggle-theme"  data-bs-toggle="offcanvas" data-bs-target="#theme-setting"><i class="fa fa-cog fa-w-16 fa-spin"></i></div>
     </div>
     <div class="sidebar-themesettings offcanvas offcanvas-end" id="theme-setting">
@@ -45,7 +45,7 @@ let themesettings = `
                                     <input type="radio" name="LayoutTheme" id="miniLayout" value="mini" >
                                     <label for="miniLayout">
                                         <span class="d-block mb-2 layout-img">
-                                            <img src="assets/img/theme/mini.svg" alt="img">
+                                            <img src="../assets/img/theme/mini.svg" alt="img">
                                         </span>                                    
                                         <span class="layout-type">Mini</span>
                                     </label>
@@ -444,7 +444,7 @@ let themesettings = `
                     <a href="#" id="resetbutton" class="btn btn-light close-theme w-100"><i class="ti ti-restore me-1"></i>Reset</a>
                 </div>
                 <div class="col-6">
-                    <a href="#" class="btn btn-primary w-100" data-bs-dismiss="offcanvas"><i class="ti ti-shopping-cart-plus me-1"></i>Buy Product</a>
+                    <a href="#" class="btn btn-primary w-100" data-bs-dismiss="offcanvas"><i class="ti ti-user-star fs-16 me-2"></i>Support Team</a>
                 </div>
             </div>
         </div>    
