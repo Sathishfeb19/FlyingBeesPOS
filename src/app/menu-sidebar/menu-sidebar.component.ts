@@ -12,13 +12,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './menu-sidebar.component.scss'
 })
 export class MenuSidebarComponent {
-  // searchQuery: string = '';
-  // constructor(private http: HttpClient, private Bees: FlyingbeesService, private router: Router) { }
-  // USER_TYPE: any;
-  // userData: any = this.Bees.userData;
-  // PERMISSIONS = JSON.parse(this.userData.PERMISSIONS || '{}');
-  // ngOnInit(): void {
-  //   this.USER_TYPE = this.userData.USER_TYPE;
-  // }
+  searchQuery: string = '';
+  USER_TYPE: any;
+  userData: any;
+  PERMISSIONS: any;
 
+  constructor(
+    private http: HttpClient,
+    private Bees: FlyingbeesService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.userData = this.Bees.userData;
+    this.PERMISSIONS = JSON.parse(this.userData?.PERMISSIONS || '{}');
+    this.USER_TYPE = this.userData?.USER_TYPE;
+  }
 }

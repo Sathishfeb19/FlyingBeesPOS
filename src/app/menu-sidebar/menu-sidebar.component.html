@@ -3,7 +3,7 @@
 	<div class="sidebar-logo ">
 		<a href="index.html" class="logo logo-normal">
 			<!-- <img src="assets/img/logo.svg" alt="Img"> -->
-			 <h2>Flying Bees </h2>
+			<h2>Flying Bees </h2>
 		</a>
 		<a href="index.html" class="logo logo-white">
 			<img src="assets/img/logo-white.svg" alt="Img">
@@ -77,32 +77,35 @@
 				<li class="submenu-open">
 					<h6 class="submenu-hdr">Home</h6>
 					<ul>
-						<li>
-							<a href="dashboard"><i
+						<li *ngIf="PERMISSIONS['dashboard']">
+							<a routerLink="/dashboard" routerLinkActive="active"><i
 									class="ti ti-layout-grid fs-16 me-2"></i><span>Dashboard</span></a>
-
 						</li>
-
-						
-
 					</ul>
 				</li>
 
-				<li class="submenu-open">
+				<li class="submenu-open" routerLinkActive="show"
+					*ngIf="PERMISSIONS?.['add-user'] || PERMISSIONS?.['add-warehouse']">
 					<h6 class="submenu-hdr">Main Masters</h6>
 					<ul>
 						<li class="submenu">
-							<a href="javascript:void(0);"><i
-									class="ti ti-layout-grid fs-16 me-2"></i><span>Masters</span><span
-									class="menu-arrow"></span></a>
+							<a href="javascript:void(0);">
+								<i class="ti ti-layout-grid fs-16 me-2"></i>
+								<span>Masters</span>
+								<span class="menu-arrow"></span>
+							</a>
 							<ul>
-								<li><a href="add-user">Add User</a></li>
-								<li><a href="add-warehouse">Add Warehouse</a></li>
+								<li *ngIf="PERMISSIONS?.['add-user']">
+									<a routerLink="/add-user" routerLinkActive="active">Add User</a>
+								</li>
+								<li *ngIf="PERMISSIONS?.['add-warehouse']">
+									<a routerLink="/add-warehouse" routerLinkActive="active">Add Warehouse</a>
+								</li>
 							</ul>
 						</li>
-
 					</ul>
 				</li>
+
 				<li class="submenu-open">
 					<h6 class="submenu-hdr">Stock</h6>
 					<ul>
@@ -164,8 +167,8 @@
 							<a href="javascript:void(0);"><i class="ti ti-file-stack fs-16 me-2"></i><span>Exchange
 									List</span><span class="menu-arrow"></span></a>
 							<ul>
-								<li><a href="expense-list.html">Pending List</a></li>
-								<li><a href="expense-category.html">Approved List</a></li>
+								<li><a href="view-returns">Pending List</a></li>
+								<li><a href="return-update">Approved List</a></li>
 							</ul>
 						</li>
 
