@@ -109,37 +109,41 @@
 				<li class="submenu-open">
 					<h6 class="submenu-hdr">Stock</h6>
 					<ul>
-						<li><a href="purchase-list.html"><i class="ti ti-shopping-bag fs-16 me-2"></i><span>Import
+						<li *ngIf="PERMISSIONS['import-stock']"><a routerLink="/import-stock"
+								routerLinkActive="active"><i class="ti ti-shopping-bag fs-16 me-2"></i><span>Import
 									Stock</span></a></li>
 					</ul>
 				</li>
 
-				<li class="submenu-open">
+				<li class="submenu-open" *ngIf="PERMISSIONS['create-sales']">
 					<h6 class="submenu-hdr">Sales</h6>
 					<ul>
-						<li><a href="purchase-list.html"><i class="ti ti-shopping-bag fs-16 me-2"></i><span>Create Sales
+						<li><a routerLink="/create-sales" routerLinkActive="active"><i
+									class="ti ti-shopping-bag fs-16 me-2"></i><span>Create Sales
 									Invoice</span></a></li>
 					</ul>
 				</li>
 
-				<li class="submenu-open">
+				<li class="submenu-open" routerLinkActive="show"
+					*ngIf="PERMISSIONS['godown-stock'] || PERMISSIONS['age-report'] || PERMISSIONS['no-moving-report']|| PERMISSIONS['slow-moving-report'] || PERMISSIONS['fast-moving-report'] ">
 					<h6 class="submenu-hdr">Stock Report</h6>
 					<ul>
 						<li class="submenu">
 							<a href="javascript:void(0);"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Stock
 									Report</span><span class="menu-arrow"></span></a>
 							<ul>
-								<li><a href="godown-stock">Godown Stock</a></li>
-								<li><a href="fast-moving-report">Fast moving Goods</a></li>
-								<li><a href="slow-moving-report">Slow moving Goods</a></li>
-								<li><a href="no-moving-report">No moving Goods</a></li>
-								<li><a href="age-report">Stock Age Report</a></li>
+								<li *ngIf="PERMISSIONS['godown-stock']"><a routerLink="/godown-stock" routerLinkActive="active">Godown Stock</a></li>
+								<li *ngIf="PERMISSIONS['fast-moving-report']"><a routerLink="/fast-moving-report" routerLinkActive="active">Fast moving Goods</a></li>
+								<li *ngIf="PERMISSIONS['slow-moving-report']"><a routerLink="/slow-moving-report" routerLinkActive="active">Slow moving Goods</a></li>
+								<li *ngIf="PERMISSIONS['no-moving-report']"><a routerLink="/no-moving-report" routerLinkActive="active">No moving Goods</a></li>
+								<li *ngIf="PERMISSIONS['age-report']"><a routerLink="/age-report" routerLinkActive="active">Stock Age Report</a></li>
 							</ul>
 						</li>
 
 					</ul>
 				</li>
-				<li class="submenu-open">
+				<li class="submenu-open" routerLinkActive="show"
+                    *ngIf="PERMISSIONS['transfer-list'] || PERMISSIONS['invoice-list'] || PERMISSIONS['godown-report']  || PERMISSIONS['salesperson-report']">
 					<h6 class="submenu-hdr">Sales Report</h6>
 					<ul>
 
@@ -147,10 +151,10 @@
 							<a href="javascript:void(0);"><i class="ti ti-file-percent fs-16 me-2"></i><span>Sales
 									Report</span><span class="menu-arrow"></span></a>
 							<ul>
-								<li><a href="transfer-list">Stock Transfer List</a></li>
-								<li><a href="invoice-list">Godown Invoice List</a></li>
-								<li><a href="godown-report">Godown Sales List</a></li>
-								<li><a href="salesperson-report">Sales Person List</a></li>
+								<li *ngIf="PERMISSIONS['transfer-list']"><a routerLink="/transfer-list" routerLinkActive="active">Stock Transfer List</a></li>
+								<li *ngIf="PERMISSIONS['invoice-list']"><a routerLink="/invoice-list" routerLinkActive="active">Godown Invoice List</a></li>
+								<li *ngIf="PERMISSIONS['godown-report']"><a routerLink="/godown-report" routerLinkActive="active">Godown Sales List</a></li>
+								<li *ngIf="PERMISSIONS['salesperson-report']"><a routerLink="/salesperson-report" routerLinkActive="active">Sales Person List</a></li>
 							</ul>
 						</li>
 					</ul>

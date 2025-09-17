@@ -20,6 +20,9 @@ import { SalesPriceComponent } from './sales-price/sales-price.component';
 import { SalesPersonComponent } from './sales-person/sales-person.component';
 import { ReturnPendingComponent } from './return-pending/return-pending.component';
 import { ReturnApprovedComponent } from './return-approved/return-approved.component';
+import { AddImportStockComponent } from './add-import-stock/add-import-stock.component';
+import { ViewImportStockComponent } from './view-import-stock/view-import-stock.component';
+import { AddSalesInvoiceComponent } from './add-sales-invoice/add-sales-invoice.component';
 
 export const routes: Routes = [
   { path: '', component: BeesLoginComponent, title: 'Login | Flying Bees', canActivate: [AuthGuard] },
@@ -37,12 +40,17 @@ export const routes: Routes = [
   { path: 'add-warehouse', component: AddWareHouseComponent, title: 'Add WareHouse | Flying Bees', canActivate: [AuthGuard] },
   { path: 'add-warehouse/:id', component: AddWareHouseComponent, title: 'WareHouse Details | Flying Bees', canActivate: [AuthGuard] },
   { path: 'view-warehouse', component: ViewWareHouseComponent, title: 'WareHouse List | Flying Bees', canActivate: [AuthGuard] },
+  //StockUpload
+  { path: 'import-stock', component: AddImportStockComponent, title: 'Import Stock | Flying Bees', canActivate: [AuthGuard] },
+  { path: 'view-stock', component: ViewImportStockComponent, title: 'View Stock | Flying Bees', canActivate: [AuthGuard] },
   // Stock Reports
   { path: 'godown-stock', component: ReportStocklistComponent, title: 'Godown Stock List | Flying Bees', canActivate: [AuthGuard] },
   { path: 'fast-moving-report', component: ReportFastMovingComponent, title: 'Fast Moving Stock List | Flying Bees', canActivate: [AuthGuard] },
   { path: 'slow-moving-report', component: ReportSlowMovingComponent, title: 'Slow Moving Stock List | Flying Bees', canActivate: [AuthGuard] },
   { path: 'no-moving-report', component: ReportZeroMovingComponent, title: 'Zero Moving Stock List | Flying Bees', canActivate: [AuthGuard] },
   { path: 'age-report', component: ReportAgeStockComponent, title: 'Age Stock List | Flying Bees', canActivate: [AuthGuard] },
+  //Sales
+  { path: 'create-sales', component: AddSalesInvoiceComponent, title: 'New Sales | Flying Bees', canActivate: [AuthGuard] },
   //Sales Report
   { path: 'transfer-list', component: SalesTransferComponent, title: 'Stock Transfer List | Flying Bees', canActivate: [AuthGuard] },
   { path: 'invoice-list', component: SalesInvoiceComponent, title: 'Sales Invoice List | Flying Bees', canActivate: [AuthGuard] },
