@@ -89,8 +89,7 @@ export class FlyingbeesService {
     formData.append("id", INSERTED_URL);
     return this.http.post(URL, formData);
   }
-
-
+  
   View_VIISalesList(WH: any): Observable<Object> {
     var URL = this.API + 'ViewVIISalesList.php';
     var formData = new FormData();

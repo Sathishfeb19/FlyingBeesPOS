@@ -33,9 +33,9 @@ export const routes: Routes = [
   { path: 'user-profile', component: BeesGeneralSettingComponent, title: 'Setting | Flying Bees' },
   { path: '404-page', component: BeesErrorpageComponent, title: 'Setting | Flying Bees' },
   //User
-  { path: 'add-user', component: AddUserComponent, title: 'Add User | Flying Bees', canActivate: [AuthGuard] },
+  { path: 'create-user', component: AddUserComponent, title: 'Add User | Flying Bees', canActivate: [AuthGuard] },
   { path: 'user/:id', component: AddUserComponent, title: 'User Details | Flying Bees', canActivate: [AuthGuard] },
-  { path: 'view-user', component: ViewUserComponent, title: 'User List | Flying Bees', canActivate: [AuthGuard] },
+  { path: 'view-users', component: ViewUserComponent, title: 'User List | Flying Bees', canActivate: [AuthGuard] },
   //WareHouse
   { path: 'add-warehouse', component: AddWareHouseComponent, title: 'Add WareHouse | Flying Bees', canActivate: [AuthGuard] },
   { path: 'add-warehouse/:id', component: AddWareHouseComponent, title: 'WareHouse Details | Flying Bees', canActivate: [AuthGuard] },

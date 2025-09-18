@@ -37,6 +37,7 @@ export class BeesDashboardComponent implements OnInit {
   TODAY_SALESQTY: any;
   YESTERDAY_SALESQTY: any;
   LAST_IIIDAYS: any;
+  MAX_QTY :any;
   LAST_XVDAYS: any;
   LAST_XXXXVDAYS: any;
   LAST_IIIDAYSQTY: any;

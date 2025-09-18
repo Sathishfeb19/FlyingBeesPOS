@@ -85,7 +85,7 @@
 				</li>
 
 				<li class="submenu-open" routerLinkActive="show"
-					*ngIf="PERMISSIONS?.['add-user'] || PERMISSIONS?.['add-warehouse']">
+					 *ngIf="PERMISSIONS['create-user'] || PERMISSIONS['create-warehouse']">
 					<h6 class="submenu-hdr">Main Masters</h6>
 					<ul>
 						<li class="submenu">
@@ -95,8 +95,8 @@
 								<span class="menu-arrow"></span>
 							</a>
 							<ul>
-								<li *ngIf="PERMISSIONS?.['add-user']">
-									<a routerLink="/add-user" routerLinkActive="active">Add User</a>
+								<li *ngIf="PERMISSIONS?.['create-user']">
+									<a routerLink="/create-user" routerLinkActive="active">Add User</a>
 								</li>
 								<li *ngIf="PERMISSIONS?.['add-warehouse']">
 									<a routerLink="/add-warehouse" routerLinkActive="active">Add Warehouse</a>
