@@ -8,8 +8,8 @@ import CryptoJS from 'crypto-js';
   providedIn: 'root'
 })
 export class FlyingbeesService {
-  // API = "http://localhost/grace_bees_api/"; 
-   API = "https://gracefashion.sg/grace/api/";
+  API = "http://localhost/GraceAPI/"; 
+  //  API = "https://gracefashion.sg/grace/api/";
   router: any;
   userData: any = Object();
   private secretKey: string = 'SathishKumar';
@@ -39,8 +39,8 @@ export class FlyingbeesService {
     this.Cookies.set('usertoken', token);
   }
 
-  LoginCheck(email: any, password: any): Observable<object> {
-    var URL = this.API + 'Check.php';
+  LoginValidation(email: any, password: any): Observable<object> {
+    var URL = this.API + 'LoginValidation.php';
     var formData = new FormData();
     formData.append("password", password);
     formData.append("email", email);

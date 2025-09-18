@@ -331,8 +331,8 @@
 									<img src="assets/img/profiles/avator1.jpg" alt="Img">
 								</span>
 								<div>
-									<h6 class="fw-medium">John Smilga</h6>
-									<p>Admin</p>
+									<h6 class="fw-medium">{{USERNAME}}</h6>
+									<p>{{TYPE_NAME}}</p>
 								</div>
 							</div>
 							<a class="dropdown-item" href="profile"><i class="ti ti-user-circle me-2"></i>MyProfile</a>
@@ -352,7 +352,7 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<a class="dropdown-item" href="profile">My Profile</a>
 						<a class="dropdown-item" href="user-profile">Settings</a>
-						<a class="dropdown-item" href="#">Logout</a>
+						<a class="dropdown-item" href="#" (click)="UserLogOut()">Logout</a>
 					</div>
 				</div>
 				<!-- /Mobile Menu -->
